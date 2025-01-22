@@ -1,0 +1,83 @@
+header{
+    color: #d39a15;
+    background-image: none;
+    font: typography;
+    padding: 20px;
+    text-align: center;
+}
+
+body.main{
+    background-color: blanchedalmond;
+    background-size: cover;
+    background-position: center;
+
+}
+
+body.Teemo-body{
+    background-image: url('BackGround/Teemo.png');
+    background-color:white;
+    background-size: cover;
+    background-position: center;
+}
+
+body.Jinx-body{
+    background-image: url('BackGround/Poro.jpg');
+    background-color:white;
+    background-size: cover;
+    background-position: center;
+}
+
+body.Ahri-body{
+    background-image: url('BackGround/Fizz.jpg');
+    background-color:white;
+    background-size: cover;
+    background-position: center;
+}
+
+body.Lux-body{
+    background-image: url('BackGround/Ashe.jpg');
+    background-color:white;
+    background-size: cover;
+    background-position: center;
+}
+
+body.Yasuo-body{
+    background-image: url('BackGround/Yasuo.jpg');
+    background-color:white;
+    background-size: cover;
+    background-position: center;
+}
+header.teemo-header{
+    color: #c70d0d;
+    font: typography;
+    padding: 20px;
+    text-align: center;
+}
+
+header.jinx-header{
+    color: #1572dd;
+    font: typography;
+    padding: 20px;
+    text-align: center;
+}
+
+header.ahri-header{
+    color: #e71cd6;
+    font: typography;
+    padding: 20px;
+    text-align: center;
+}
+
+header.lux-header{
+    color: #e4b777;
+    font: typography;
+    padding: 20px;
+    text-align: center;
+}
+
+header.yasuo-header{
+    color: #504b88ba;
+    font: typography;
+    padding: 20px;
+    text-align: center;
+}
