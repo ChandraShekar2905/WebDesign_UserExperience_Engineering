@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css">
+    <link rel="icon" type="image/x-icon" href="Favicon.png">
+
+    <title>Planetarium Trip</title>  
+</head>
+<body>
+    <header>
+        <h1>SEDS Northeastern Planetarium Trip</h1> 
+    </header>
+
+    <br>
+    <br>
+
+    <h3>Student Registration Form</h3>
+
+    <form id="Registration-Form">
+
+        <!-- Student Name -->
+        <div class="form-details">
+            <label for="name">Name:</label>
+            <input type="text" id="studentName" required minlength="2" maxlength="50" pattern="^[a-zA-Z0-9 ]+$" />
+            <span class="error" id="nameError"></span>
+        </div><br>
+
+        <!-- Student Email -->
+        <div class="form-details">
+            <label for="email">Email:</label>
+            <input type="email" id="emailAddress" required />
+            <span class="errorMessage" id="emailError"></span>
+        </div><br>
+
+        <!-- Student Phone Number -->
+        <div class="form-details">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phoneNumber" placeholder="(XXX) XXX-XXXX" required />
+            <span class="errorMessage" id="phoneNumberError"></span>
+        </div><br>
+
+        <!-- Student Address Field1 -->
+        <div class="field-details">
+            <label for="address1">Street Address 1:</label>
+            <input type="text" id="addressField1" required />
+            <span class="errorMessage" id="addressField1Error"></span>
+        </div><br>
+         
+        <!-- Student Address Field2 -->
+        <div class="form-details">
+        <label for="address2">Street Address 2 (Optional):</label>
+        <input type="text" id="addressField2" maxlength="20" />
+        <span class="char-counter" id="addressField2Counter">0/20 characters used</span>
+        </div><br>
+
+        <!-- Student ZipCode -->
+        <div class="field-group">
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zipCode" required />
+            <span class="error" id="zipError"></span>
+        </div><br>
+        
+        <!-- Student Meal Option -->
+        <div class="form-details">
+            <label for="selection">Meal option:</label>
+            <select id="mealOption">
+              <option value="">Select</option>
+              <option value="Veg-Meal">Veg Meal</option>
+              <option value="Non-Veg Meal">Non-Veg Meal</option>
+              <option value="Sandwich">Sandwich</option>
+              <option value="Pizza">Pizza</option>
+              <option value="Burger">Burger</option>
+            </select>
+        </div>
+
+        <div class="form-details" id="checkboxContainer">
+            <!-- Student Meal Options will be Displayed here when student selects their Option -->
+        </div><br>
+
+        <button type="submit" id="submitButton" disabled>Submit</button>
+        <br><br>
+      
+        <h3>Registered Students</h3>
+        <table border=3 id="dataTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address 1</th>
+              <th>Address 2</th>
+              <th>Zip Code</th>
+              <th>Meal Option</th>
+              <th>Drink</th>
+              <th>Extras</th>
+            </tr>
+          </thead>
+          <tbody id="registeredStudents">
+            <!-- Registered Students Data will appear here -->
+          </tbody>
+        </table>
+    </form>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
