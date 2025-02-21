@@ -1,0 +1,48 @@
+body{
+  background-image: url('denim.webp');
+}
+
+.calculator-box {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 36px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .calc-input {
+    margin-bottom: 15px;
+  }
+  .calc-btns button {
+    width: 22%;
+    margin: 1%;
+  }
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+
+  .text-center {
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .btn {
+    background-color: #4caf50;
+    color: white;
+    border-radius: 36px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .btn:hover {
+    background-color: #45a049;    
+  }
+
+  .btn:active {
+    transform: scale(1.05); 
+  }

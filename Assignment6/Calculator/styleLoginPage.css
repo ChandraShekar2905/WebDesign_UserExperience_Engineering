@@ -1,0 +1,23 @@
+body {
+    background-color: #f0f8ff;
+  }
+  .container {
+    margin-top: 5%;
+    max-width: 500px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  #loginBtn{
+    background-color: #4caf50;
+    color: white;
+    border-radius: 36px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+

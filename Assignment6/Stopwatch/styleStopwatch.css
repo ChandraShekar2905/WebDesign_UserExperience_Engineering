@@ -1,0 +1,27 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    background-image: url('broken_noise.webp');
+  }
+  
+  .stopwatch-container {
+    background: #fff;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center; 
+  }
+  
+  #timeDisplay {
+    font-size: 2em;
+    margin: 20px 0;
+  }
+  
