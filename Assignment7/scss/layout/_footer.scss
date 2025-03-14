@@ -1,0 +1,80 @@
+// _footer.scss
+// Footer styles
+
+.footer {
+    background-color: $dark-color;
+    color: $light-color;
+    padding: $spacing-xl 0 $spacing-md;
+    
+    &__content {
+      @include grid(1fr, auto, $spacing-lg);
+      margin-bottom: $spacing-xl;
+      
+      @include respond-to('md') {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+    
+    &__logo {
+      h3 {
+        color: $white;
+        font-size: $font-size-xl;
+        margin-bottom: $spacing-md;
+      }
+    }
+    
+    &__links {
+      h4 {
+        color: $white;
+        margin-bottom: $spacing-md;
+      }
+      
+      ul {
+        li {
+          margin-bottom: $spacing-sm;
+          
+          a {
+            color: $light-color;
+            transition: $transition-fast;
+            
+            &:hover {
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+    
+    &__newsletter {
+      h4 {
+        color: $white;
+        margin-bottom: $spacing-md;
+      }
+      
+      .form {
+        @include flex(row, center, stretch, nowrap);
+        
+        &__input {
+          flex: 1;
+          padding: $spacing-sm;
+          border: none;
+          border-radius: $border-radius-sm 0 0 $border-radius-sm;
+        }
+        
+        .btn {
+          border-radius: 0 $border-radius-sm $border-radius-sm 0;
+        }
+      }
+    }
+    
+    &__bottom {
+      text-align: center;
+      padding-top: $spacing-md;
+      border-top: 1px solid rgba($light-color, 0.1);
+      
+      p {
+        margin-bottom: 0;
+        font-size: $font-size-sm;
+      }
+    }
+  }

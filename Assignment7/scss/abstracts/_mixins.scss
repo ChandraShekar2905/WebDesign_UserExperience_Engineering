@@ -1,0 +1,103 @@
+
+// Media query mixins for responsive design
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      $value: map-get($breakpoints, $breakpoint);
+      
+      @media (min-width: $value) {
+        @content;
+      }
+    } @else {
+      @warn "No breakpoint found for '#{$breakpoint}' in $breakpoints map.";
+    }
+  }
+  
+  // Flexbox mixin
+  @mixin flex($direction: row, $justify: center, $align: center, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+  }
+  
+  // CSS Grid mixin
+  @mixin grid($columns: 1fr, $rows: auto, $gap: $spacing-md) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    gap: $gap;
+  }
+  
+  // Typography mixin
+  @mixin typography($size: $font-size-md, $weight: $font-weight-regular, $line-height: 1.5, $family: $font-primary) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $line-height;
+    font-family: $family;
+  }
+  
+  // Position absolute mixin
+  @mixin position-absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+  
+  // Box shadow mixin
+  @mixin box-shadow($x: 0, $y: 2px, $blur: 4px, $spread: 0, $color: rgba($black, 0.1)) {
+    box-shadow: $x $y $blur $spread $color;
+  }
+  
+  // Truncate text with ellipsis
+  @mixin text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  // Button mixin
+  @mixin button-style($bg-color: $primary-color, $text-color: $white, $hover-darken: 10%) {
+    display: inline-block;
+    background-color: $bg-color;
+    color: $text-color;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-sm;
+    border: none;
+    cursor: pointer;
+    transition: $transition-normal;
+    text-decoration: none;
+    text-align: center;
+    
+    &:hover, &:focus {
+      background-color: darken($bg-color, $hover-darken);
+    }
+  }
+  
+  // Clearfix mixin
+  @mixin clearfix {
+    &::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  
+  // Animation mixin
+  @mixin keyframes($name) {
+    @keyframes #{$name} {
+      @content;
+    }
+  }
+  
+  @mixin animation($name, $duration: 1s, $timing-function: ease, $delay: 0s, $iteration-count: 1, $direction: normal, $fill-mode: none) {
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: $timing-function;
+    animation-delay: $delay;
+    animation-iteration-count: $iteration-count;
+    animation-direction: $direction;
+    animation-fill-mode: $fill-mode;
+  }

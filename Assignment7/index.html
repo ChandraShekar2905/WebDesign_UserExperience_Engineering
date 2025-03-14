@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer - Home</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Travel Explorer</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Home</a></li>
+                    <li class="nav__item"><a href="destinations.html" class="nav__link">Destinations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Grid Layout -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h2 class="hero__title">Discover Amazing Places</h2>
+                    <p class="hero__text">Explore breathtaking destinations and create unforgettable memories.</p>
+                    <a href="destinations.html" class="btn btn--primary">Start Exploring</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Destinations with Flexbox Layout -->
+        <section class="featured">
+            <div class="container">
+                <h2 class="section-title">Featured Destinations</h2>
+                <div class="featured__container">
+                    <div class="featured__card">
+                        <div class="featured__image">
+                            <img src="images/paris.png" alt="Paris, France">
+                        </div>
+                        <div class="featured__content">
+                            <h3 class="featured__title">Paris, France</h3>
+                            <p class="featured__text">The City of Light offers countless attractions.</p>
+                            <a href="destinations/paris.html" class="btn btn--secondary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="featured__card">
+                        <div class="featured__image">
+                            <img src="images/Kiyomizudera-Panoramic-Temple-in-kyoto-in-japan.png" alt="Kyoto, Japan">
+                        </div>
+                        <div class="featured__content">
+                            <h3 class="featured__title">Kyoto, Japan</h3>
+                            <p class="featured__text">Experience traditional Japanese culture.</p>
+                            <a href="destinations/kyoto.html" class="btn btn--secondary">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="featured__card">
+                        <div class="featured__image">
+                            <img src="images/Santorini.png" alt="Santorini, Greece">
+                        </div>
+                        <div class="featured__content">
+                            <h3 class="featured__title">Santorini, Greece</h3>
+                            <p class="featured__text">Stunning views and beautiful white architecture.</p>
+                            <a href="destinations/santorini.html" class="btn btn--secondary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travel Tips with CSS Grid Layout -->
+        <section class="tips">
+            <div class="container">
+                <h2 class="section-title">Travel Tips</h2>
+                <div class="tips__grid">
+                    <div class="tips__item">
+                        <div class="tips__icon">
+                            <img src="icons/check-list.png" alt="Planning Icon" width="40" height="40">
+                            <span class="icon icon--packing"></span>
+                        </div>
+                        <h3 class="tips__title">Packing Essentials</h3>
+                        <p class="tips__text">Learn how to pack efficiently for any trip.</p>
+                    </div>
+                    <div class="tips__item">
+                        <div class="tips__icon">
+                            <img src="icons/budget.png" alt="Planning Icon" width="40" height="40">
+                            <span class="icon icon--budget"></span>
+                        </div>
+                        <h3 class="tips__title">Budget Planning</h3>
+                        <p class="tips__text">Tips for traveling on various budgets.</p>
+                    </div>
+                    <div class="tips__item">
+                        <div class="tips__icon">
+                            <img src="icons/security.png" alt="Planning Icon" width="40" height="40">
+                            <span class="icon icon--safety"></span>
+                        </div>
+                        <h3 class="tips__title">Safety Tips</h3>
+                        <p class="tips__text">Stay safe during your adventures abroad.</p>
+                    </div>
+                    <div class="tips__item">
+                        <div class="tips__icon">
+                            <img src="icons/photography.png" alt="Planning Icon" width="40" height="40">
+                            <span class="icon icon--photos"></span>
+                        </div>
+                        <h3 class="tips__title">Photography Tips</h3>
+                        <p class="tips__text">Capture your journey with stunning photos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials with Flexbox Layout -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Travelers Say</h2>
+                <div class="testimonials__container">
+                    <div class="testimonial">
+                        <div class="testimonial__content">
+                            <p>"Travel Explorer made planning my dream vacation incredibly easy. Highly recommend!"</p>
+                        </div>
+                        <div class="testimonial__author">
+                            <p>Emma Williams</p>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial__content">
+                            <p>"The travel tips section helped me prepare for my first international trip!"</p>
+                        </div>
+                        <div class="testimonial__author">
+                            <p>James Miller</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <h3>Travel Explorer</h3>
+                </div>
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form class="form">
+                        <input type="email" placeholder="Enter your email" class="form__input">
+                        <button class="btn btn--primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2023 Travel Explorer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

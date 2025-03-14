@@ -1,0 +1,59 @@
+
+// Function to convert px to rem
+@function rem($pixels, $context: $font-size-base) {
+    @return ($pixels / $context) * 1rem;
+  }
+  
+  // Function to get a color from the palette with optional opacity
+  @function color($color-name, $opacity: 1) {
+    $color: $primary-color; // Default fallback
+    
+    @if $color-name == 'primary' {
+      $color: $primary-color;
+    } @else if $color-name == 'secondary' {
+      $color: $secondary-color;
+    } @else if $color-name == 'accent' {
+      $color: $accent-color;
+    } @else if $color-name == 'dark' {
+      $color: $dark-color;
+    } @else if $color-name == 'light' {
+      $color: $light-color;
+    }
+    
+    @if $opacity < 1 {
+      @return rgba($color, $opacity);
+    } @else {
+      @return $color;
+    }
+  }
+  
+  // Function to get a value from the z-index map
+  @function z-index($layer) {
+    @if map-has-key($z-index, $layer) {
+      @return map-get($z-index, $layer);
+    }
+    
+    @warn "No z-index found for '#{$layer}' in $z-index map. Using default z-index: 1.";
+    @return 1;
+  }
+  
+  // Function to get a breakpoint value
+  @function breakpoint($point) {
+    @if map-has-key($breakpoints, $point) {
+      @return map-get($breakpoints, $point);
+    }
+    
+    @warn "No breakpoint found for '#{$point}' in $breakpoints map. Using 0.";
+    @return 0;
+  }
+  
+  // Function to calculate the contrast ratio and return black or white
+  @function get-contrast-color($color) {
+    $luminance: (0.299 * red($color) + 0.587 * green($color) + 0.114 * blue($color)) / 255;
+    
+    @if $luminance > 0.5 {
+      @return $black;
+    } @else {
+      @return $white;
+    }
+  }

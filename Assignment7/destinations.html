@@ -1,0 +1,227 @@
+<!-- destinations.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Explorer - Destinations</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Travel Explorer</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="destinations.html" class="nav__link nav__link--active">Destinations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Destinations Hero with CSS Grid -->
+        <section class="destinations-hero">
+            <div class="container">
+                <div class="destinations-hero__content">
+                    <h1 class="destinations-hero__title">Explore Amazing Destinations</h1>
+                    <p class="destinations-hero__text">Discover our handpicked selection of the world's most beautiful places.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section with Flexbox -->
+        <section class="filter">
+            <div class="container">
+                <div class="filter__container">
+                    <div class="filter__group">
+                        <label for="region" class="filter__label">Region</label>
+                        <select id="region" class="filter__select">
+                            <option value="">All Regions</option>
+                            <option value="europe">Europe</option>
+                            <option value="asia">Asia</option>
+                            <option value="africa">Africa</option>
+                            <option value="americas">Americas</option>
+                            <option value="oceania">Oceania</option>
+                        </select>
+                    </div>
+                    <div class="filter__group">
+                        <label for="theme" class="filter__label">Travel Theme</label>
+                        <select id="theme" class="filter__select">
+                            <option value="">All Themes</option>
+                            <option value="beach">Beach</option>
+                            <option value="mountain">Mountain</option>
+                            <option value="city">City</option>
+                            <option value="culture">Culture</option>
+                        </select>
+                    </div>
+                    <div class="filter__group">
+                        <label for="budget" class="filter__label">Budget</label>
+                        <select id="budget" class="filter__select">
+                            <option value="">All Budgets</option>
+                            <option value="budget">Budget</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="luxury">Luxury</option>
+                        </select>
+                    </div>
+                    <button class="btn btn--primary">Apply Filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destinations Grid with CSS Grid -->
+        <section class="destinations-grid">
+            <div class="container">
+                <div class="destinations-grid__container">
+                    <!-- Destination cards will be displayed in a grid -->
+                    <div class="destination-card">
+                        <div class="destination-card__image">
+                            <img src="images/paris.png" alt="Paris, France">
+                            <div class="destination-card__tag">Europe</div>
+                        </div>
+                        <div class="destination-card__content">
+                            <h3 class="destination-card__title">Paris, France</h3>
+                            <div class="destination-card__details">
+                                <span class="destination-card__theme">City, Culture</span>
+                                <span class="destination-card__budget">Moderate</span>
+                            </div>
+                            <p class="destination-card__description">Explore the Eiffel Tower, Louvre Museum, and charming streets of this romantic city.</p>
+                            <a href="destinations/paris.html" class="btn btn--secondary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card">
+                        <div class="destination-card__image">
+                            <img src="images/bali.png" alt="Bali, Indonesia">
+                            <div class="destination-card__tag">Asia</div>
+                        </div>
+                        <div class="destination-card__content">
+                            <h3 class="destination-card__title">Bali, Indonesia</h3>
+                            <div class="destination-card__details">
+                                <span class="destination-card__theme">Beach, Culture</span>
+                                <span class="destination-card__budget">Budget</span>
+                            </div>
+                            <p class="destination-card__description">Discover beautiful beaches, rich culture, and lush landscapes in this tropical paradise.</p>
+                            <a href="destinations/bali.html" class="btn btn--secondary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card">
+                        <div class="destination-card__image">
+                            <img src="images/newyork.png" alt="New York, USA">
+                            <div class="destination-card__tag">Americas</div>
+                        </div>
+                        <div class="destination-card__content">
+                            <h3 class="destination-card__title">New York, USA</h3>
+                            <div class="destination-card__details">
+                                <span class="destination-card__theme">City</span>
+                                <span class="destination-card__budget">Luxury</span>
+                            </div>
+                            <p class="destination-card__description">Experience the city that never sleeps with iconic landmarks and vibrant neighborhoods.</p>
+                            <a href="destinations/newyork.html" class="btn btn--secondary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card">
+                        <div class="destination-card__image">
+                            <img src="images/Kiyomizudera-Panoramic-Temple-in-kyoto-in-japan.png" alt="Kyoto, Japan">
+                            <div class="destination-card__tag">Asia</div>
+                        </div>
+                        <div class="destination-card__content">
+                            <h3 class="destination-card__title">Kyoto, Japan</h3>
+                            <div class="destination-card__details">
+                                <span class="destination-card__theme">Culture</span>
+                                <span class="destination-card__budget">Moderate</span>
+                            </div>
+                            <p class="destination-card__description">Step back in time with traditional temples, gardens, and Japanese culture.</p>
+                            <a href="destinations/kyoto.html" class="btn btn--secondary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card">
+                        <div class="destination-card__image">
+                            <img src="images/Santorini.png" alt="Santorini, Greece">
+                            <div class="destination-card__tag">Europe</div>
+                        </div>
+                        <div class="destination-card__content">
+                            <h3 class="destination-card__title">Santorini, Greece</h3>
+                            <div class="destination-card__details">
+                                <span class="destination-card__theme">Beach</span>
+                                <span class="destination-card__budget">Luxury</span>
+                            </div>
+                            <p class="destination-card__description">Enjoy stunning sunsets, white-washed buildings, and crystal-clear waters.</p>
+                            <a href="destinations/santorini.html" class="btn btn--secondary">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="destination-card">
+                        <div class="destination-card__image">
+                            <img src="images/marrakech.png" alt="Marrakech, Morocco">
+                            <div class="destination-card__tag">Africa</div>
+                        </div>
+                        <div class="destination-card__content">
+                            <h3 class="destination-card__title">Marrakech, Morocco</h3>
+                            <div class="destination-card__details">
+                                <span class="destination-card__theme">Culture</span>
+                                <span class="destination-card__budget">Budget</span>
+                            </div>
+                            <p class="destination-card__description">Get lost in colorful markets, taste exotic spices, and experience Arabic culture.</p>
+                            <a href="destinations/marrakech.html" class="btn btn--secondary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section with Flexbox -->
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter__container">
+                    <div class="newsletter__content">
+                        <h2 class="newsletter__title">Get Travel Inspiration</h2>
+                        <p class="newsletter__text">Sign up for our newsletter to receive travel tips, exclusive deals, and destination guides.</p>
+                    </div>
+                    <form class="newsletter__form">
+                        <input type="email" placeholder="Your email address" class="newsletter__input">
+                        <button class="btn btn--primary newsletter__btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <h3>Travel Explorer</h3>
+                </div>
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form class="form">
+                        <input type="email" placeholder="Enter your email" class="form__input">
+                        <button class="btn btn--primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Travel Explorer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

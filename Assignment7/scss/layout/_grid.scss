@@ -1,0 +1,145 @@
+// Container
+.container {
+    @extend %container;
+  }
+  
+  // Basic grid system
+  .grid {
+    @include grid(repeat(12, 1fr), auto, $spacing-md);
+    
+    // Grid with different column configurations
+    &--2-cols {
+      @include grid(repeat(1, 1fr), auto, $spacing-md);
+      
+      @include respond-to('md') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    &--3-cols {
+      @include grid(repeat(1, 1fr), auto, $spacing-md);
+      
+      @include respond-to('sm') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @include respond-to('lg') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    &--4-cols {
+      @include grid(repeat(1, 1fr), auto, $spacing-md);
+      
+      @include respond-to('sm') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @include respond-to('md') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      @include respond-to('lg') {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    // Auto-fit grids
+    &--auto-fit {
+      @include grid(repeat(auto-fit, minmax(250px, 1fr)), auto, $spacing-md);
+    }
+    
+    // Grid gap variations
+    &--gap-sm {
+      gap: $spacing-sm;
+    }
+    
+    &--gap-lg {
+      gap: $spacing-lg;
+    }
+  }
+  
+  // Grid areas layout for the hero section
+  .hero {
+    @extend %section-padding;
+    background-color: $primary-color;
+    color: $white;
+    
+    &__content {
+      @include grid(1fr, auto, $spacing-md);
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      
+      @include respond-to('md') {
+        @include grid(1fr 1fr, auto, $spacing-lg);
+        text-align: left;
+      }
+    }
+  }
+  
+  // Grid for tips section
+  .tips {
+    @extend %section-padding;
+    background-color: $light-color;
+    
+    &__grid {
+      @include grid(repeat(1, 1fr), auto, $spacing-md);
+      
+      @include respond-to('sm') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @include respond-to('lg') {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    &__item {
+      @extend %card;
+      padding: $spacing-lg;
+      text-align: center;
+    }
+  }
+  
+  // Destinations grid
+  .destinations-grid {
+    @extend %section-padding;
+    
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: $spacing-lg;
+      
+      @include respond-to('sm') {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @include respond-to('lg') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+  
+  // Generic grid item
+  .grid-item {
+    padding: $spacing-md;
+    
+    &--span-2 {
+      @include respond-to('md') {
+        grid-column: span 2;
+      }
+    }
+    
+    &--span-3 {
+      @include respond-to('md') {
+        grid-column: span 3;
+      }
+    }
+    
+    &--span-row-2 {
+      @include respond-to('md') {
+        grid-row: span 2;
+      }
+    }
+  }

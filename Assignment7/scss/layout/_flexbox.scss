@@ -1,0 +1,226 @@
+// Basic flexbox container
+.flex {
+    @include flex(row, flex-start, stretch, wrap);
+    
+    // Direction variations
+    &--row {
+      flex-direction: row;
+    }
+    
+    &--column {
+      flex-direction: column;
+    }
+    
+    &--row-reverse {
+      flex-direction: row-reverse;
+    }
+    
+    &--column-reverse {
+      flex-direction: column-reverse;
+    }
+    
+    // Justify content variations
+    &--justify-start {
+      justify-content: flex-start;
+    }
+    
+    &--justify-end {
+      justify-content: flex-end;
+    }
+    
+    &--justify-center {
+      justify-content: center;
+    }
+    
+    &--justify-between {
+      justify-content: space-between;
+    }
+    
+    &--justify-around {
+      justify-content: space-around;
+    }
+    
+    &--justify-evenly {
+      justify-content: space-evenly;
+    }
+    
+    // Align items variations
+    &--align-start {
+      align-items: flex-start;
+    }
+    
+    &--align-end {
+      align-items: flex-end;
+    }
+    
+    &--align-center {
+      align-items: center;
+    }
+    
+    &--align-stretch {
+      align-items: stretch;
+    }
+    
+    &--align-baseline {
+      align-items: baseline;
+    }
+    
+    // Wrap variations
+    &--nowrap {
+      flex-wrap: nowrap;
+    }
+    
+    &--wrap {
+      flex-wrap: wrap;
+    }
+    
+    &--wrap-reverse {
+      flex-wrap: wrap-reverse;
+    }
+  }
+  
+  // Featured cards with flexbox
+  .featured {
+    @extend %section-padding;
+    
+    &__container {
+      @include flex(row, space-between, stretch, wrap);
+      gap: $spacing-lg;
+    }
+    
+    &__card {
+      @extend %card;
+      flex: 1 1 300px;
+      @extend %hover-effect;
+      
+      @include respond-to('sm') {
+        flex: 0 1 calc(50% - #{$spacing-lg});
+      }
+      
+      @include respond-to('lg') {
+        flex: 0 1 calc(33.333% - #{$spacing-lg});
+      }
+    }
+    
+    &__content {
+      padding: $spacing-md;
+    }
+  }
+  
+  // Testimonials flexbox layout
+  .testimonials {
+    @extend %section-padding;
+    background-color: $light-color;
+    
+    &__container {
+      @include flex(row, center, stretch, wrap);
+      gap: $spacing-lg;
+    }
+    
+    .testimonial {
+      @extend %card;
+      flex: 1 1 100%;
+      padding: $spacing-lg;
+      
+      @include respond-to('md') {
+        flex: 0 1 calc(50% - #{$spacing-lg});
+      }
+      
+      &__content {
+        font-style: italic;
+        margin-bottom: $spacing-md;
+        position: relative;
+        
+        &::before {
+          content: '"';
+          font-size: 4rem;
+          color: rgba($primary-color, 0.2);
+          position: absolute;
+          top: -1.5rem;
+          left: -1rem;
+        }
+      }
+      
+      &__author {
+        text-align: right;
+        font-weight: $font-weight-medium;
+      }
+    }
+  }
+  
+  // Filter section with flexbox
+  .filter {
+    padding: $spacing-lg 0;
+    
+    &__container {
+      @include flex(column, flex-start, stretch, wrap);
+      gap: $spacing-md;
+      
+      @include respond-to('md') {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+    }
+    
+    &__group {
+      flex: 1;
+    }
+    
+    &__label {
+      display: block;
+      margin-bottom: $spacing-xs;
+      font-weight: $font-weight-medium;
+    }
+    
+    &__select {
+      width: 100%;
+      padding: $spacing-sm;
+      border: 1px solid rgba($dark-color, 0.2);
+      border-radius: $border-radius-sm;
+    }
+  }
+  
+  // Newsletter section with flexbox
+  .newsletter {
+    background-color: $primary-color;
+    color: $white;
+    padding: $spacing-xl 0;
+    
+    &__container {
+      @include flex(column, center, center, nowrap);
+      gap: $spacing-lg;
+      text-align: center;
+      
+      @include respond-to('md') {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+      }
+    }
+    
+    &__content {
+      flex: 1;
+    }
+    
+    &__form {
+      @include flex(row, center, stretch, nowrap);
+      width: 100%;
+      
+      @include respond-to('md') {
+        width: auto;
+      }
+    }
+    
+    &__input {
+      flex: 1;
+      padding: $spacing-sm $spacing-md;
+      border: none;
+      border-radius: $border-radius-sm 0 0 $border-radius-sm;
+      min-width: 250px;
+    }
+    
+    &__btn {
+      border-radius: 0 $border-radius-sm $border-radius-sm 0;
+    }
+  }

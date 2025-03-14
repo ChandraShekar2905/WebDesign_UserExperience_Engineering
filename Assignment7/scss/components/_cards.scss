@@ -1,0 +1,142 @@
+// Card component styles
+
+.card {
+    @extend %card;
+    margin-bottom: $spacing-md;
+    @extend %transition;
+    
+    &:hover {
+      @include box-shadow(0, 10px, 20px, 0, rgba($black, 0.1));
+    }
+    
+    &__image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      
+      img {
+        @extend %img-cover;
+        transition: $transition-normal;
+      }
+    }
+    
+    &:hover &__image img {
+      transform: scale(1.05);
+    }
+    
+    &__content {
+      padding: $spacing-md;
+    }
+    
+    &__title {
+      font-size: $font-size-lg;
+      margin-bottom: $spacing-sm;
+    }
+    
+    &__text {
+      color: rgba($dark-color, 0.8);
+      margin-bottom: $spacing-md;
+    }
+    
+    &__footer {
+      @include flex(row, space-between, center);
+      padding-top: $spacing-sm;
+      border-top: 1px solid rgba($dark-color, 0.1);
+    }
+  }
+  
+  // Destination card specific styles
+  .destination-card {
+    @extend %card;
+    @extend %transition;
+    @extend %hover-effect;
+    
+    &__image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      
+      img {
+        @extend %img-cover;
+      }
+    }
+    
+    &__tag {
+      position: absolute;
+      top: $spacing-sm;
+      left: $spacing-sm;
+      background-color: $primary-color;
+      color: $white;
+      padding: $spacing-xs $spacing-sm;
+      border-radius: $border-radius-sm;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-medium;
+    }
+    
+    &__content {
+      padding: $spacing-md;
+    }
+    
+    &__title {
+      margin-bottom: $spacing-xs;
+    }
+    
+    &__details {
+      @include flex(row, space-between, center);
+      margin-bottom: $spacing-sm;
+      color: rgba($dark-color, 0.7);
+      font-size: $font-size-sm;
+    }
+    
+    &__theme, &__budget {
+      display: inline-block;
+    }
+    
+    &__budget {
+      background-color: rgba($accent-color, 0.1);
+      padding: 2px $spacing-xs;
+      border-radius: $border-radius-sm;
+      color: $accent-color;
+    }
+    
+    &__description {
+      margin-bottom: $spacing-md;
+      color: rgba($dark-color, 0.8);
+    }
+  }
+  
+  // Featured card
+  .featured {
+    &__card {
+      position: relative;
+      overflow: hidden;
+      
+      &:hover &__image img {
+        transform: scale(1.05);
+      }
+    }
+    
+    &__image {
+      height: 250px;
+      overflow: hidden;
+      
+      img {
+        @extend %img-cover;
+        transition: $transition-normal;
+      }
+    }
+    
+    &__content {
+      padding: $spacing-md;
+      background-color: $white;
+    }
+    
+    &__title {
+      margin-bottom: $spacing-xs;
+    }
+    
+    &__text {
+      margin-bottom: $spacing-md;
+      color: rgba($dark-color, 0.8);
+    }
+  }

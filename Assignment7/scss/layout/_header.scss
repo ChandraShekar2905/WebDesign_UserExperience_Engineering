@@ -1,0 +1,84 @@
+// Header styles
+@import '../abstracts/variables';
+.header {
+  background-color: $white;
+  padding: $spacing-md 0;
+  box-shadow: 0 2px 5px rgba($black, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: z-index('sticky');
+  
+  .container {
+    @include flex(row, space-between, center);
+  }
+  
+  .logo {
+    h1 {
+      font-size: $font-size-xl;
+      margin-bottom: 0;
+      color: $primary-color;
+    }
+  }
+}
+
+// Navigation
+.nav {
+  &__list {
+    @include flex(row, center, center);
+    gap: $spacing-md;
+  }
+  
+  &__link {
+    display: block;
+    padding: $spacing-xs $spacing-sm;
+    font-weight: $font-weight-medium;
+    color: $dark-color;
+    
+    &:hover {
+      color: $primary-color;
+    }
+    
+    &--active {
+      color: $primary-color;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -3px; // Add 'px' and make sure there's a semicolon
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $primary-color;
+      }
+    }
+  }
+  
+  // Mobile menu button (for responsive design)
+  &__toggle {
+    display: none;
+    
+    @include respond-to('sm') {
+      display: block;
+    }
+  }
+  
+  // Mobile navigation
+  @include respond-to('sm') {
+    &__list {
+      display: none;
+      
+      &.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: $white;
+        padding: $spacing-md;
+        box-shadow: 0 5px 5px rgba($black, 0.1);
+      }
+    }
+  }
+}

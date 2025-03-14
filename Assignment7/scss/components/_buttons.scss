@@ -1,0 +1,175 @@
+// Button styles
+
+.btn {
+    @include button-style();
+    font-weight: $font-weight-medium;
+    
+    // Button variations
+    &--primary {
+      @include button-style($primary-color, $white);
+    }
+    
+    &--secondary {
+      @include button-style($secondary-color, $white);
+    }
+    
+    &--accent {
+      @include button-style($accent-color, $white);
+    }
+    
+    &--dark {
+      @include button-style($dark-color, $white);
+    }
+    
+    &--light {
+      @include button-style($light-color, $dark-color);
+    }
+    
+    &--outline {
+      background-color: transparent;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+      
+      &:hover {
+        background-color: $primary-color;
+        color: $white;
+      }
+    }
+    
+    // Button sizes
+    &--sm {
+      padding: $spacing-xs $spacing-sm;
+      font-size: $font-size-sm;
+    }
+    
+    &--lg {
+      padding: $spacing-md $spacing-lg;
+      font-size: $font-size-lg;
+    }
+    
+    // Full width button
+    &--block {
+      display: block;
+      width: 100%;
+    }
+    
+    // Rounded button
+    &--rounded {
+      border-radius: $border-radius-lg;
+    }
+    
+    // Circle button
+    &--circle {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      @include flex(row, center, center);
+    }
+    
+    // Button with icon
+    &--icon {
+      @include flex(row, center, center);
+      gap: $spacing-xs;
+      
+      i, svg {
+        font-size: 1.2em;
+      }
+    }
+    
+    // Disabled state
+    &:disabled, &--disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      
+      &:hover {
+        background-color: $primary-color; // Prevent hover effect
+      }
+    }
+  }
+  
+  // Button group
+  .btn-group {
+    @include flex(row, flex-start, stretch, nowrap);
+    
+    .btn {
+      border-radius: 0;
+      
+      &:first-child {
+        border-radius: $border-radius-sm 0 0 $border-radius-sm;
+      }
+      
+      &:last-child {
+        border-radius: 0 $border-radius-sm $border-radius-sm 0;
+      }
+    }
+  }
+  // Add these styles to your _buttons.scss file
+
+.btn {
+  // Your existing button styles...
+
+  // Hover state
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba($black, 0.2);
+  }
+
+  // Active state (when clicking)
+  &:active, &--active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba($black, 0.1);
+  }
+
+  // Clicked feedback
+  &--clicked {
+    animation: pulse 0.4s ease;
+  }
+
+  // Tooltip for placeholder links
+  .tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba($dark-color, 0.9);
+    color: $white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    pointer-events: none;
+    animation: fadeIn 0.3s ease;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 5px;
+      border-style: solid;
+      border-color: rgba($dark-color, 0.9) transparent transparent transparent;
+    }
+  }
+}
+
+// Pulsing animation
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+// Fade in animation
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+// Card hover effect
+.card--hover, .featured__card.card--hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba($black, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}

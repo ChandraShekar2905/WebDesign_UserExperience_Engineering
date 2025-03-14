@@ -1,0 +1,25 @@
+// Import abstracts
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
+
+// Import base
+@import 'base/reset';
+@import 'base/typography';
+
+// Import layouts
+@import 'layout/grid';
+@import 'layout/flexbox';
+@import 'layout/header';
+@import 'layout/footer';
+
+// Import components
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/navigation';
+
+// Import pages
+@import 'pages/home';
+@import 'pages/destinations';
+@import 'pages/destination-detail';  
